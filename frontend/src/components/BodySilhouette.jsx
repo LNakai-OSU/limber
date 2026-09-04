@@ -1,7 +1,44 @@
 import { MUSCLE_VIEWS } from "../data/muscleMap";
 
-const SKIN = "#2a323f";
-const SKIN_LINE = "#3a4557";
+const SKIN = "#e9dcc0";
+const SKIN_LINE = "#cbb98f";
+
+// Unit muscle-belly shapes, each spanning roughly -0.5..0.5 in both axes,
+// drawn once and reused via an SVG transform (translate/rotate/scale) per
+// instance - see muscleMap.js. Organic bezier tapers instead of ellipses so
+// they actually read as a muscle belly (fuller toward one end, tapering at
+// the tendons) rather than a uniform blob.
+const SHAPES = {
+  // tapers to a point at the top, rounds out at the bottom - limb muscles
+  spindle: "M0,-0.5 C0.3,-0.42 0.42,-0.2 0.37,0.05 C0.33,0.26 0.2,0.42 0,0.5 C-0.2,0.42 -0.33,0.26 -0.37,0.05 C-0.42,-0.2 -0.3,-0.42 0,-0.5 Z",
+  // long and narrow, rounded at both ends - straplike muscles
+  strap: "M0,-0.5 C0.24,-0.47 0.3,-0.32 0.28,-0.05 C0.3,0.22 0.26,0.4 0,0.5 C-0.26,0.4 -0.3,0.22 -0.28,-0.05 C-0.3,-0.32 -0.24,-0.47 0,-0.5 Z",
+  // rounded all over, slightly irregular - caps, deltoids, small deep muscles
+  round: "M0,-0.5 C0.32,-0.46 0.5,-0.24 0.46,0.02 C0.5,0.26 0.3,0.46 0,0.5 C-0.28,0.47 -0.5,0.24 -0.47,-0.03 C-0.5,-0.27 -0.3,-0.46 0,-0.5 Z",
+  // broad diamond/kite - trapezius
+  kite: "M0,-0.5 C0.2,-0.28 0.42,-0.1 0.4,0.08 C0.28,0.3 0.12,0.42 0,0.5 C-0.12,0.42 -0.28,0.3 -0.4,0.08 C-0.42,-0.1 -0.2,-0.28 0,-0.5 Z",
+  // wide fan tapering to one point - pecs, lats
+  fan: "M0,-0.5 C0.34,-0.44 0.5,-0.18 0.44,0.12 C0.34,0.34 0.14,0.44 0,0.5 C-0.16,0.44 -0.36,0.34 -0.45,0.1 C-0.5,-0.2 -0.32,-0.44 0,-0.5 Z",
+};
+
+function Muscle({ m, isActive, onSelect }) {
+  const shape = SHAPES[m.shape] || SHAPES.spindle;
+  return (
+    <g onClick={() => onSelect(m.region)} className="muscle-shape" style={{ cursor: "pointer" }}>
+      <path
+        d={shape}
+        transform={`translate(${m.cx} ${m.cy}) rotate(${m.angle || 0}) scale(${m.width} ${m.length})`}
+        fill={isActive ? "var(--clay-bright)" : "var(--clay)"}
+        fillOpacity={isActive ? 0.95 : 0.68}
+        stroke={isActive ? "var(--clay-bright)" : "var(--clay)"}
+        strokeOpacity={0.9}
+        strokeWidth="1.4"
+        vectorEffect="non-scaling-stroke"
+      />
+      <title>{m.label}</title>
+    </g>
+  );
+}
 
 function StandingOutline({ back }) {
   return (
@@ -22,13 +59,8 @@ function StandingOutline({ back }) {
       <line x1="122" y1="345" x2="122" y2="452" stroke={SKIN} strokeWidth="20" strokeLinecap="round" />
       <ellipse cx="80" cy="472" rx="16" ry="10" />
       <ellipse cx="120" cy="472" rx="16" ry="10" />
-      {back ? (
+      {back && (
         <line x1="100" y1="90" x2="100" y2="218" stroke={SKIN_LINE} strokeWidth="1" strokeDasharray="3,4" fill="none" />
-      ) : (
-        <>
-          <circle cx="92" cy="32" r="2.2" fill={SKIN_LINE} stroke="none" />
-          <circle cx="108" cy="32" r="2.2" fill={SKIN_LINE} stroke="none" />
-        </>
       )}
     </g>
   );
@@ -54,36 +86,13 @@ function ProfileOutline() {
 
 export default function BodySilhouette({ view, activeRegion, onSelect }) {
   const muscles = MUSCLE_VIEWS[view] || [];
-  const viewBox = "0 0 200 500";
 
   return (
-    <svg viewBox={viewBox} style={{ width: "100%", maxWidth: 280, height: "auto" }}>
+    <svg viewBox="0 0 200 500" style={{ width: "100%", maxWidth: 300, height: "auto" }}>
       {view === "side" ? <ProfileOutline /> : <StandingOutline back={view === "back"} />}
-
-      {muscles.map((m, i) => {
-        const isActive = m.region === activeRegion;
-        return (
-          <g
-            key={`${m.region}-${i}`}
-            onClick={() => onSelect(m.region)}
-            style={{ cursor: "pointer" }}
-            className="muscle-shape"
-          >
-            <ellipse
-              cx={m.cx}
-              cy={m.cy}
-              rx={m.rx}
-              ry={m.ry}
-              transform={m.rotate ? `rotate(${m.rotate} ${m.cx} ${m.cy})` : undefined}
-              fill={isActive ? "var(--accent)" : "var(--muscle)"}
-              fillOpacity={isActive ? 0.95 : 0.75}
-              stroke={isActive ? "var(--accent)" : "var(--muscle-bright)"}
-              strokeWidth="1"
-            />
-            <title>{m.label}</title>
-          </g>
-        );
-      })}
+      {muscles.map((m, i) => (
+        <Muscle key={`${m.region}-${i}`} m={m} isActive={m.region === activeRegion} onSelect={onSelect} />
+      ))}
     </svg>
   );
 }
