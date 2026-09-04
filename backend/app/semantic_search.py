@@ -34,11 +34,19 @@ def load():
     _corpus_embeddings = _model.encode(texts, normalize_embeddings=True)
 
 
-def search(query, top_k=8):
+MIN_RELEVANCE_SCORE = 0.35
+
+
+def search(query, top_k=8, min_score=MIN_RELEVANCE_SCORE):
     query_vec = _model.encode([query], normalize_embeddings=True)[0]
     scores = _corpus_embeddings @ query_vec
-    ranked = np.argsort(-scores)[:top_k]
-    return [{**_exercises[i], "match_score": float(scores[i])} for i in ranked]
+    ranked = np.argsort(-scores)
+    results = []
+    for i in ranked:
+        if scores[i] < min_score or len(results) >= top_k:
+            break
+        results.append({**_exercises[i], "match_score": float(scores[i])})
+    return results
 
 
 def all_exercises():

@@ -3,6 +3,7 @@
     "id": "neck-chin-tuck",
     "name": "Chin Tuck",
     "regions": ["neck"],
+    "demo": "neck-tilt",
     "description": "A gentle isometric exercise that retrains posture by drawing the head back over the shoulders, easing strain from forward-head posture (common with desk and phone use).",
     "steps": [
       "Sit or stand tall, looking straight ahead.",
@@ -19,6 +20,7 @@
     "id": "neck-lateral-flexion",
     "name": "Neck Side Stretch",
     "regions": ["neck"],
+    "demo": "neck-tilt",
     "description": "A classic side-of-neck stretch that relieves tightness from sleeping wrong or one-sided phone/bag carrying habits.",
     "steps": [
       "Sit tall, drop your right ear toward your right shoulder until you feel a stretch on the left side of your neck.",
@@ -35,6 +37,7 @@
     "id": "neck-rotation",
     "name": "Seated Neck Rotation",
     "regions": ["neck"],
+    "demo": "neck-tilt",
     "description": "Restores rotational range of motion in the neck, useful for stiffness that makes checking blind spots or looking over your shoulder uncomfortable.",
     "steps": [
       "Sit tall and slowly turn your head to look over one shoulder as far as comfortable.",
@@ -48,9 +51,27 @@
     "difficulty": "easy"
   },
   {
+    "id": "neck-isometric-strength",
+    "name": "Isometric Neck Press",
+    "regions": ["neck"],
+    "demo": "neck-tilt",
+    "description": "Builds neck stability by resisting gentle self-applied pressure in each direction, often recommended alongside stretches for chronic neck tension.",
+    "steps": [
+      "Place your palm against your forehead and press your head into your hand without letting your head move.",
+      "Hold 5 seconds, breathing normally.",
+      "Repeat pressing against the back, then each side of your head.",
+      "Do 5 reps in each direction."
+    ],
+    "targets": "Deep neck flexors and extensors",
+    "cautions": "Use gentle, steady pressure - this is about stability, not a strength max.",
+    "equipment": "none",
+    "difficulty": "easy"
+  },
+  {
     "id": "jaw-relaxed-opening",
     "name": "Relaxed Jaw Opening",
     "regions": ["jaw"],
+    "demo": "jaw-open",
     "description": "A gentle mobility drill for jaw tightness or clenching-related discomfort (TMJ-area tension), encouraging a symmetric, relaxed opening pattern.",
     "steps": [
       "Rest your tongue gently on the roof of your mouth just behind your front teeth.",
@@ -67,6 +88,7 @@
     "id": "jaw-massage",
     "name": "Masseter Self-Massage",
     "regions": ["jaw"],
+    "demo": "jaw-open",
     "description": "Manual release for the jaw muscles that tighten from clenching, grinding, or stress.",
     "steps": [
       "Place two fingers on the muscle bulge at the back of your jaw (it flexes when you clench your teeth).",
@@ -83,6 +105,7 @@
     "id": "shoulder-doorway-pec-stretch",
     "name": "Doorway Chest Stretch",
     "regions": ["shoulders", "chest"],
+    "demo": "overhead-reach",
     "description": "One of the most reliable stretches for rounded-shoulder posture, opening up tight chest muscles that pull the shoulders forward.",
     "steps": [
       "Stand in a doorway with your forearm against the frame, elbow bent at 90 degrees, upper arm roughly shoulder height.",
@@ -99,6 +122,7 @@
     "id": "shoulder-cross-body",
     "name": "Cross-Body Shoulder Stretch",
     "regions": ["shoulders"],
+    "demo": "cross-body-pull",
     "description": "Targets the back of the shoulder, useful for tightness from overhead activity or sleeping on one side.",
     "steps": [
       "Bring your right arm straight across your chest.",
@@ -115,6 +139,7 @@
     "id": "shoulder-pendulum",
     "name": "Pendulum Swing",
     "regions": ["shoulders"],
+    "demo": "overhead-reach",
     "description": "A gentle, gravity-assisted mobility drill often used after shoulder stiffness or minor strain to restore easy motion without active muscle effort.",
     "steps": [
       "Lean forward slightly, supporting yourself with your uninjured hand on a table or chair.",
@@ -131,6 +156,7 @@
     "id": "shoulder-wall-slide",
     "name": "Wall Slide",
     "regions": ["shoulders", "upper-back"],
+    "demo": "overhead-reach",
     "description": "Builds overhead shoulder mobility and shoulder-blade control, helpful for people who feel 'stuck' or pinchy raising their arms overhead.",
     "steps": [
       "Stand with your back, head, and arms against a wall, elbows bent at 90 degrees like a goalpost.",
@@ -147,6 +173,7 @@
     "id": "shoulder-external-rotation-band",
     "name": "Band External Rotation",
     "regions": ["shoulders"],
+    "demo": "cross-body-pull",
     "description": "Strengthens the rotator cuff muscles that stabilize the shoulder, often recommended for general shoulder resilience and mild instability-related discomfort.",
     "steps": [
       "Hold a light resistance band with elbows bent 90 degrees and tucked at your sides.",
@@ -160,9 +187,78 @@
     "difficulty": "medium"
   },
   {
+    "id": "shoulder-scapular-squeeze",
+    "name": "Scapular Squeeze",
+    "regions": ["shoulders", "upper-back"],
+    "demo": "cross-body-pull",
+    "description": "Strengthens the muscles between the shoulder blades, a common weak point behind rounded-shoulder posture and upper-back achiness.",
+    "steps": [
+      "Sit or stand tall, arms relaxed at your sides.",
+      "Squeeze your shoulder blades together and slightly down, as if pinching a pencil between them.",
+      "Hold 5 seconds, then release.",
+      "Repeat 12-15 times."
+    ],
+    "targets": "Rhomboids, middle trapezius",
+    "cautions": "Keep shoulders down, away from your ears, throughout.",
+    "equipment": "none",
+    "difficulty": "easy"
+  },
+  {
+    "id": "upper-arm-triceps-stretch",
+    "name": "Overhead Triceps Stretch",
+    "regions": ["upper-arm"],
+    "demo": "overhead-reach",
+    "description": "A simple stretch for the back of the upper arm, useful for tightness after overhead activity or extended time in front of a keyboard.",
+    "steps": [
+      "Raise one arm overhead, then bend the elbow so your hand drops behind your head.",
+      "Use your other hand to gently press down on the bent elbow.",
+      "Hold 20-30 seconds, feeling a stretch along the back of the upper arm.",
+      "Switch sides."
+    ],
+    "targets": "Triceps brachii",
+    "cautions": "Press gently on the elbow - avoid forcing extra range.",
+    "equipment": "none",
+    "difficulty": "easy"
+  },
+  {
+    "id": "upper-arm-biceps-stretch",
+    "name": "Doorway Biceps Stretch",
+    "regions": ["upper-arm"],
+    "demo": "cross-body-pull",
+    "description": "Opens up the front of the upper arm and shoulder, a good companion to the doorway chest stretch for people who do a lot of gripping or carrying.",
+    "steps": [
+      "Stand next to a doorway or wall, arm extended behind you at shoulder height, palm flat against the frame.",
+      "Slowly rotate your body away from the arm until you feel a stretch along the front of the upper arm.",
+      "Hold 20-30 seconds.",
+      "Switch sides."
+    ],
+    "targets": "Biceps brachii, anterior shoulder",
+    "cautions": "Rotate slowly and stop well short of shoulder pain.",
+    "equipment": "doorway or wall",
+    "difficulty": "easy"
+  },
+  {
+    "id": "upper-arm-foam-roll",
+    "name": "Foam Rolling the Upper Arm",
+    "regions": ["upper-arm"],
+    "demo": "roll-pulse",
+    "description": "A self-massage technique for general biceps/triceps tightness, often used after upper-body activity.",
+    "steps": [
+      "Place a foam roller on the floor and support your upper arm on it, lying on your side or propped on your forearm.",
+      "Roll slowly from shoulder to elbow along the front or back of the arm.",
+      "Pause on tender spots for 20-30 seconds.",
+      "Repeat on the other arm."
+    ],
+    "targets": "Biceps brachii, triceps brachii",
+    "cautions": "Avoid rolling directly over the elbow joint; use light-to-moderate pressure.",
+    "equipment": "foam roller",
+    "difficulty": "medium"
+  },
+  {
     "id": "upperback-cat-cow",
     "name": "Cat-Cow",
     "regions": ["upper-back", "lower-back", "spine"],
+    "demo": "quadruped-flow",
     "description": "A foundational spinal mobility flow that gently moves the whole spine through flexion and extension - a great general warm-up for back stiffness.",
     "steps": [
       "Start on hands and knees, wrists under shoulders, knees under hips.",
@@ -179,6 +275,7 @@
     "id": "upperback-thoracic-rotation",
     "name": "Seated Thoracic Rotation",
     "regions": ["upper-back", "spine"],
+    "demo": "seated-twist",
     "description": "Restores rotation in the mid-back, which often stiffens from long sitting and can make twisting movements (like checking your back seat) feel restricted.",
     "steps": [
       "Sit tall in a chair, arms crossed over your chest.",
@@ -195,6 +292,7 @@
     "id": "upperback-thread-the-needle",
     "name": "Thread the Needle",
     "regions": ["upper-back", "shoulders", "spine"],
+    "demo": "quadruped-flow",
     "description": "A deeper rotational stretch for the upper back and shoulder blade region, popular for relieving between-the-shoulder-blade tightness.",
     "steps": [
       "Start on hands and knees.",
@@ -211,6 +309,7 @@
     "id": "upperback-foam-roll-extension",
     "name": "Foam Roller Thoracic Extension",
     "regions": ["upper-back", "spine"],
+    "demo": "roll-pulse",
     "description": "Uses a foam roller to gently extend a rounded upper back, countering hours of hunched sitting.",
     "steps": [
       "Place a foam roller horizontally under your shoulder blades, knees bent, feet flat.",
@@ -227,6 +326,7 @@
     "id": "lowerback-childs-pose",
     "name": "Child's Pose",
     "regions": ["lower-back", "hips", "spine"],
+    "demo": "quadruped-flow",
     "description": "A gentle, restful stretch for the low back and hips - often the first thing people reach for when the low back feels tight or achy.",
     "steps": [
       "Kneel on the floor, big toes touching, knees wide.",
@@ -243,6 +343,7 @@
     "id": "lowerback-knee-to-chest",
     "name": "Knee-to-Chest Stretch",
     "regions": ["lower-back", "hips"],
+    "demo": "supine-knee-pull",
     "description": "A gentle low-back decompression stretch commonly used for general stiffness or a dull ache after prolonged sitting.",
     "steps": [
       "Lie on your back with knees bent, feet flat.",
@@ -259,6 +360,7 @@
     "id": "lowerback-pelvic-tilt",
     "name": "Pelvic Tilt",
     "regions": ["lower-back", "core"],
+    "demo": "supine-knee-pull",
     "description": "A gentle core-activation drill that mobilizes the low back and builds the pelvic control that underlies most low-back rehab programs.",
     "steps": [
       "Lie on your back, knees bent, feet flat.",
@@ -275,6 +377,7 @@
     "id": "lowerback-birddog",
     "name": "Bird Dog",
     "regions": ["lower-back", "core", "hips"],
+    "demo": "quadruped-flow",
     "description": "A widely used stability exercise that builds control through the low back and hips without loading the spine - a staple in most low-back care programs.",
     "steps": [
       "Start on hands and knees, spine neutral.",
@@ -291,6 +394,7 @@
     "id": "lowerback-seated-forward-fold",
     "name": "Seated Forward Fold",
     "regions": ["lower-back", "hamstrings"],
+    "demo": "forward-fold",
     "description": "A combined low-back and hamstring stretch, useful when tight hamstrings are contributing to low-back tension.",
     "steps": [
       "Sit with legs extended in front of you, spine tall.",
@@ -307,6 +411,7 @@
     "id": "core-deadbug",
     "name": "Dead Bug",
     "regions": ["core", "lower-back"],
+    "demo": "supine-knee-pull",
     "description": "Builds core control that supports the spine during everyday movement, often prescribed alongside low-back stretches rather than as a stretch itself.",
     "steps": [
       "Lie on your back, arms reaching toward the ceiling, knees bent 90 degrees over your hips.",
@@ -320,9 +425,44 @@
     "difficulty": "medium"
   },
   {
+    "id": "core-plank-hold",
+    "name": "Front Plank",
+    "regions": ["core", "lower-back"],
+    "demo": "quadruped-flow",
+    "description": "A staple core-stability hold that builds the trunk endurance most low-back and posture programs rely on.",
+    "steps": [
+      "Rest on your forearms and toes, elbows under shoulders, body in a straight line from head to heels.",
+      "Brace your abs and squeeze your glutes to keep your hips from sagging or piking up.",
+      "Hold 15-30 seconds, breathing steadily.",
+      "Rest and repeat 2-3 times."
+    ],
+    "targets": "Deep core, shoulders, glutes",
+    "cautions": "Stop if your low back sags - shorten the hold time rather than let form break down.",
+    "equipment": "mat",
+    "difficulty": "medium"
+  },
+  {
+    "id": "core-side-plank",
+    "name": "Side Plank",
+    "regions": ["core"],
+    "demo": "side-lying-raise",
+    "description": "Targets the obliques and lateral core stabilizers, often recommended for people whose discomfort shows up more on one side during twisting or side-bending.",
+    "steps": [
+      "Lie on your side, propped on your forearm, elbow under your shoulder.",
+      "Lift your hips so your body forms a straight line from head to feet.",
+      "Hold 10-20 seconds, keeping hips lifted and level.",
+      "Switch sides."
+    ],
+    "targets": "Obliques, lateral core",
+    "cautions": "Drop to your knees for an easier version if a full side plank strains your shoulder.",
+    "equipment": "mat",
+    "difficulty": "medium"
+  },
+  {
     "id": "hip-figure-four",
     "name": "Figure-Four Stretch",
     "regions": ["hips", "piriformis", "glutes"],
+    "demo": "supine-knee-pull",
     "description": "One of the most effective stretches for the piriformis and outer hip - frequently used for sciatica-adjacent tightness and general hip stiffness.",
     "steps": [
       "Lie on your back, knees bent, feet flat.",
@@ -339,6 +479,7 @@
     "id": "hip-flexor-lunge-stretch",
     "name": "Kneeling Hip Flexor Stretch",
     "regions": ["hips"],
+    "demo": "kneeling-lunge",
     "description": "Targets tight hip flexors from prolonged sitting, a very common contributor to hip and low-back tightness.",
     "steps": [
       "Kneel on one knee (pad it with a cushion), other foot forward, knee bent 90 degrees.",
@@ -355,6 +496,7 @@
     "id": "hip-90-90-stretch",
     "name": "90/90 Hip Stretch",
     "regions": ["hips"],
+    "demo": "seated-twist",
     "description": "A comprehensive hip mobility drill that addresses both internal and external rotation, often used by people who sit cross-legged or squat frequently.",
     "steps": [
       "Sit with your front leg bent 90 degrees in front of you, back leg bent 90 degrees out to the side.",
@@ -371,6 +513,7 @@
     "id": "hip-clamshell",
     "name": "Clamshell",
     "regions": ["hips", "glutes"],
+    "demo": "side-lying-raise",
     "description": "Strengthens the hip stabilizers, commonly recommended for hip and even knee discomfort linked to weak glute medius muscles.",
     "steps": [
       "Lie on your side, knees bent about 45 degrees, feet stacked and together.",
@@ -384,9 +527,44 @@
     "difficulty": "medium"
   },
   {
+    "id": "hip-standing-abductor",
+    "name": "Standing Hip Abduction",
+    "regions": ["hips", "glutes"],
+    "demo": "side-lying-raise",
+    "description": "A standing strengthening drill for the outer hip, useful for people whose hip or knee discomfort relates to weak hip stabilizers during walking.",
+    "steps": [
+      "Stand holding a wall or chair for balance.",
+      "Keeping your leg straight and toes forward, lift it out to the side.",
+      "Lower with control without leaning your torso to compensate.",
+      "Do 12-15 reps per side."
+    ],
+    "targets": "Gluteus medius, tensor fasciae latae",
+    "cautions": "Keep your torso upright - swinging the leg using momentum reduces the benefit.",
+    "equipment": "wall or chair",
+    "difficulty": "medium"
+  },
+  {
+    "id": "glute-bridge",
+    "name": "Glute Bridge",
+    "regions": ["glutes", "lower-back"],
+    "demo": "supine-knee-pull",
+    "description": "Strengthens the glutes and low back extensors together, a common recommendation for general low-back and hip resilience.",
+    "steps": [
+      "Lie on your back, knees bent, feet flat hip-width apart.",
+      "Squeeze your glutes and lift your hips until your body forms a straight line from shoulders to knees.",
+      "Hold 2-3 seconds at the top.",
+      "Lower with control and repeat 12-15 times."
+    ],
+    "targets": "Gluteus maximus, erector spinae, hamstrings",
+    "cautions": "Avoid overarching your low back at the top - stop the lift at a straight line.",
+    "equipment": "mat",
+    "difficulty": "easy"
+  },
+  {
     "id": "glute-pigeon-pose",
     "name": "Pigeon Pose",
     "regions": ["glutes", "hips", "piriformis"],
+    "demo": "kneeling-lunge",
     "description": "A deeper hip-opening stretch for the glutes and outer hip, useful for runners or anyone with deep hip tightness.",
     "steps": [
       "From hands and knees, bring your right knee forward behind your right wrist, shin at an angle.",
@@ -400,9 +578,44 @@
     "difficulty": "medium"
   },
   {
+    "id": "adductor-butterfly-stretch",
+    "name": "Butterfly Stretch",
+    "regions": ["adductors", "hips"],
+    "demo": "supine-knee-pull",
+    "description": "A classic inner-thigh stretch, useful for groin tightness from sitting cross-legged, cycling, or lateral sports movements.",
+    "steps": [
+      "Sit tall with the soles of your feet together, knees falling out to the sides.",
+      "Hold your feet and gently press your knees toward the floor with your forearms, or just let gravity work.",
+      "Hold 20-30 seconds, keeping your back straight rather than rounding forward.",
+      "Relax and repeat 2-3 times."
+    ],
+    "targets": "Adductors (inner thigh)",
+    "cautions": "Ease into it - forcing the knees down can strain the groin or inner knee.",
+    "equipment": "mat",
+    "difficulty": "easy"
+  },
+  {
+    "id": "adductor-standing-side-lunge",
+    "name": "Standing Side Lunge",
+    "regions": ["adductors", "quads"],
+    "demo": "kneeling-lunge",
+    "description": "A dynamic inner-thigh stretch that also builds a bit of strength through the standing leg, good for groin tightness from lateral movement sports.",
+    "steps": [
+      "Stand with feet wide apart, toes forward.",
+      "Shift your weight to one side, bending that knee while keeping the other leg straight.",
+      "Feel the stretch along the inner thigh of the straight leg.",
+      "Hold 2-3 seconds, then shift to the other side. Repeat 8-10 times per side."
+    ],
+    "targets": "Adductors, quadriceps",
+    "cautions": "Keep the bent knee tracking over the ankle, not caving inward.",
+    "equipment": "none",
+    "difficulty": "medium"
+  },
+  {
     "id": "itband-side-lying-stretch",
     "name": "Side-Lying IT Band Stretch",
     "regions": ["it-band", "hips", "knees"],
+    "demo": "side-lying-raise",
     "description": "Addresses tightness along the outer thigh (iliotibial band), which can contribute to outer knee and hip discomfort, especially in runners.",
     "steps": [
       "Lie on your side with the leg to be stretched on top, straight.",
@@ -419,6 +632,7 @@
     "id": "itband-foam-roll",
     "name": "Foam Rolling the IT Band",
     "regions": ["it-band", "hips", "knees"],
+    "demo": "roll-pulse",
     "description": "A self-myofascial release technique frequently used to ease outer-thigh tightness and tenderness.",
     "steps": [
       "Lie on your side with a foam roller under your outer thigh, supporting yourself with your forearm and top leg.",
@@ -435,6 +649,7 @@
     "id": "hamstring-standing-stretch",
     "name": "Standing Hamstring Stretch",
     "regions": ["hamstrings", "knees"],
+    "demo": "forward-fold",
     "description": "A simple, accessible stretch for tight hamstrings, which often contribute to both low-back and knee discomfort.",
     "steps": [
       "Place one heel on a low step or curb, leg straight, toes pointing up.",
@@ -451,6 +666,7 @@
     "id": "hamstring-nerve-glide",
     "name": "Seated Slider (Hamstring Nerve Glide)",
     "regions": ["hamstrings", "lower-back"],
+    "demo": "calf-ankle-flex",
     "description": "A gentler alternative to static stretching for hamstring tightness that also has a nerve-tension component, sometimes used when standard stretches feel irritating rather than relieving.",
     "steps": [
       "Sit tall toward the front of a chair, one leg extended, heel on the floor.",
@@ -467,6 +683,7 @@
     "id": "quad-standing-stretch",
     "name": "Standing Quad Stretch",
     "regions": ["quads", "knees"],
+    "demo": "kneeling-lunge",
     "description": "A classic stretch for the front of the thigh, useful for tightness after sitting or activities like cycling and running.",
     "steps": [
       "Stand holding a wall or chair for balance.",
@@ -483,6 +700,7 @@
     "id": "quad-couch-stretch",
     "name": "Couch Stretch",
     "regions": ["quads", "hips"],
+    "demo": "kneeling-lunge",
     "description": "A deeper combined quad and hip flexor stretch popular for people who sit for long stretches of the day.",
     "steps": [
       "Kneel in front of a couch or wall, back shin resting up against it, back foot pointing up.",
@@ -499,6 +717,7 @@
     "id": "knee-terminal-extension",
     "name": "Terminal Knee Extension",
     "regions": ["knees"],
+    "demo": "calf-ankle-flex",
     "description": "A gentle strengthening drill for the muscles that stabilize the knee, often recommended for mild knee discomfort or after periods of reduced activity.",
     "steps": [
       "Loop a resistance band around a sturdy anchor at knee height and around the back of your knee.",
@@ -515,6 +734,7 @@
     "id": "knee-heel-slides",
     "name": "Heel Slides",
     "regions": ["knees"],
+    "demo": "supine-knee-pull",
     "description": "A gentle range-of-motion exercise for stiff knees, often used early in recovery from minor knee irritation or after long immobility.",
     "steps": [
       "Lie on your back with legs straight.",
@@ -528,9 +748,44 @@
     "difficulty": "easy"
   },
   {
+    "id": "shin-tibialis-raise",
+    "name": "Standing Toe Raises",
+    "regions": ["shins", "ankles"],
+    "demo": "calf-ankle-flex",
+    "description": "Strengthens the muscle along the front of the shin, often recommended for shin tightness or mild shin-splint-type discomfort from walking or running.",
+    "steps": [
+      "Stand with your heels on the floor, back against a wall for balance if needed.",
+      "Lift the balls of your feet and toes as high as comfortable, keeping heels down.",
+      "Lower with control.",
+      "Do 2-3 sets of 15-20."
+    ],
+    "targets": "Tibialis anterior",
+    "cautions": "Go slowly - this small muscle fatigues quickly and can cramp if rushed.",
+    "equipment": "none",
+    "difficulty": "easy"
+  },
+  {
+    "id": "shin-kneeling-stretch",
+    "name": "Kneeling Shin Stretch",
+    "regions": ["shins", "ankles"],
+    "demo": "kneeling-lunge",
+    "description": "Stretches the front of the shin and top of the foot, useful after activity that leaves the front of the lower leg feeling tight.",
+    "steps": [
+      "Kneel on a soft surface with the tops of your feet flat on the floor, toes pointing back.",
+      "Sit back gently toward your heels until you feel a stretch along the shins and tops of the feet.",
+      "Hold 15-20 seconds.",
+      "Rise back up slowly."
+    ],
+    "targets": "Tibialis anterior, extensor muscles of the foot",
+    "cautions": "Go gently - this stretches sensitive structures on top of the foot and ankle.",
+    "equipment": "mat",
+    "difficulty": "easy"
+  },
+  {
     "id": "calf-wall-stretch",
     "name": "Wall Calf Stretch",
     "regions": ["calves", "ankles"],
+    "demo": "calf-ankle-flex",
     "description": "A go-to stretch for tight calves, which commonly contribute to ankle stiffness and heel discomfort.",
     "steps": [
       "Stand facing a wall, hands on the wall for support.",
@@ -547,6 +802,7 @@
     "id": "calf-soleus-stretch",
     "name": "Bent-Knee Calf Stretch (Soleus)",
     "regions": ["calves", "ankles"],
+    "demo": "calf-ankle-flex",
     "description": "Targets the deeper calf muscle that a straight-leg stretch misses, useful for ankle stiffness especially when squatting or going downstairs feels tight.",
     "steps": [
       "Same setup as the wall calf stretch, but bend the back knee slightly while keeping the heel down.",
@@ -559,9 +815,27 @@
     "difficulty": "easy"
   },
   {
+    "id": "calf-standing-raise",
+    "name": "Standing Calf Raise",
+    "regions": ["calves", "ankles"],
+    "demo": "calf-ankle-flex",
+    "description": "A simple strengthening move for the calves, useful for building resilience alongside calf and ankle stretches.",
+    "steps": [
+      "Stand with feet hip-width apart, holding a wall or chair for balance if needed.",
+      "Rise up onto the balls of your feet as high as comfortable.",
+      "Lower with control.",
+      "Do 2-3 sets of 15-20."
+    ],
+    "targets": "Gastrocnemius, soleus",
+    "cautions": "Control the lowering phase rather than dropping quickly.",
+    "equipment": "none",
+    "difficulty": "easy"
+  },
+  {
     "id": "ankle-circles",
     "name": "Ankle Circles",
     "regions": ["ankles"],
+    "demo": "calf-ankle-flex",
     "description": "A simple, low-impact way to restore general ankle mobility, often used as a warm-up or after periods of immobility (like a cast or long travel).",
     "steps": [
       "Sit or lie down and lift one foot off the ground.",
@@ -577,6 +851,7 @@
     "id": "ankle-alphabet",
     "name": "Ankle Alphabet",
     "regions": ["ankles"],
+    "demo": "calf-ankle-flex",
     "description": "A fun, thorough way to move the ankle through many directions, popular in early-stage rehab after ankle sprains or immobility.",
     "steps": [
       "Sit with your leg extended, foot off the ground.",
@@ -593,6 +868,7 @@
     "id": "ankle-dorsiflexion-stretch",
     "name": "Kneeling Ankle Dorsiflexion Stretch",
     "regions": ["ankles", "calves"],
+    "demo": "calf-ankle-flex",
     "description": "Improves the ankle's ability to bend the foot upward, a range of motion that's often limited and important for squatting, stairs, and walking uphill comfortably.",
     "steps": [
       "Kneel in a half-kneeling position with the foot to stretch flat on the floor in front of you.",
@@ -609,6 +885,7 @@
     "id": "foot-plantar-fascia-roll",
     "name": "Plantar Fascia Roll",
     "regions": ["feet"],
+    "demo": "roll-pulse",
     "description": "A self-massage technique for the sole of the foot, commonly used for morning heel/arch discomfort associated with plantar fasciitis-type tightness.",
     "steps": [
       "Sit and place a ball (tennis ball or similar) under the arch of your foot.",
@@ -625,6 +902,7 @@
     "id": "foot-toe-spreads",
     "name": "Toe Spreads",
     "regions": ["feet"],
+    "demo": "calf-ankle-flex",
     "description": "Builds strength and mobility in the small muscles of the foot, often neglected by supportive footwear.",
     "steps": [
       "Sit with feet flat on the floor.",
@@ -641,6 +919,7 @@
     "id": "wrist-flexor-stretch",
     "name": "Wrist Flexor Stretch",
     "regions": ["wrists", "forearms"],
+    "demo": "wrist-forearm-flex",
     "description": "Relieves tightness on the palm side of the forearm/wrist, common with typing, lifting, or repetitive gripping.",
     "steps": [
       "Extend one arm in front of you, palm up.",
@@ -657,6 +936,7 @@
     "id": "wrist-extensor-stretch",
     "name": "Wrist Extensor Stretch",
     "regions": ["wrists", "forearms", "elbows"],
+    "demo": "wrist-forearm-flex",
     "description": "Targets the top-of-forearm muscles associated with 'tennis elbow'-type discomfort and general wrist stiffness from typing or mousing.",
     "steps": [
       "Extend one arm in front of you, palm facing down.",
@@ -673,6 +953,7 @@
     "id": "wrist-circles",
     "name": "Wrist Circles",
     "regions": ["wrists"],
+    "demo": "wrist-forearm-flex",
     "description": "A simple mobility warm-up for wrists that feel stiff after typing, lifting, or repetitive hand use.",
     "steps": [
       "Clasp your hands together or make loose fists.",
@@ -685,9 +966,27 @@
     "difficulty": "easy"
   },
   {
+    "id": "wrist-tendon-glide",
+    "name": "Tendon Glide",
+    "regions": ["wrists", "forearms"],
+    "demo": "wrist-forearm-flex",
+    "description": "A gentle finger and wrist mobility sequence often recommended for hand stiffness from repetitive typing or gripping.",
+    "steps": [
+      "Start with fingers straight up like a 'stop' sign.",
+      "Bend fingers into a hook fist, then straighten.",
+      "Bend into a full fist, then straighten.",
+      "Bend into a straight fist, then straighten. Repeat the sequence 5-10 times."
+    ],
+    "targets": "Finger and wrist flexor tendons",
+    "cautions": "Move slowly through each position; stop if any position causes sharp pain.",
+    "equipment": "none",
+    "difficulty": "easy"
+  },
+  {
     "id": "elbow-tennis-elbow-eccentric",
     "name": "Eccentric Wrist Extension (Tennis Elbow)",
     "regions": ["elbows", "forearms", "wrists"],
+    "demo": "wrist-forearm-flex",
     "description": "A widely recommended exercise for lateral elbow discomfort ('tennis elbow'), focusing on slow lengthening of the forearm extensor muscles.",
     "steps": [
       "Rest your forearm on a table, palm down, wrist hanging off the edge, holding a light weight (or a water bottle).",
@@ -704,6 +1003,7 @@
     "id": "elbow-golfers-elbow-stretch",
     "name": "Golfer's Elbow Stretch",
     "regions": ["elbows", "forearms", "wrists"],
+    "demo": "wrist-forearm-flex",
     "description": "Addresses inner-elbow/forearm tightness ('golfer's elbow'), the counterpart to tennis elbow on the flexor side.",
     "steps": [
       "Extend the affected arm in front of you, palm up, elbow straight.",
@@ -720,6 +1020,7 @@
     "id": "chest-foam-roller-opener",
     "name": "Foam Roller Chest Opener",
     "regions": ["chest", "shoulders", "upper-back"],
+    "demo": "roll-pulse",
     "description": "A passive stretch that opens the chest and front shoulders using a foam roller along the spine, complementing the doorway stretch.",
     "steps": [
       "Lie lengthwise along a foam roller, supporting your head, hips level on the roller.",

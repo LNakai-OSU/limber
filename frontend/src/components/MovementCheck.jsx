@@ -169,7 +169,7 @@ export default function MovementCheck() {
   }
 
   function drawSkeleton(ctx, lm, canvas) {
-    ctx.fillStyle = "#e08e45";
+    ctx.fillStyle = "#f2b134";
     for (const point of lm) {
       ctx.beginPath();
       ctx.arc(point.x * canvas.width, point.y * canvas.height, 3, 0, 2 * Math.PI);
@@ -178,7 +178,7 @@ export default function MovementCheck() {
   }
 
   function drawAngleMarkers(ctx, points) {
-    ctx.strokeStyle = "#2f6f62";
+    ctx.strokeStyle = "#e8703f";
     ctx.lineWidth = 3;
     ctx.beginPath();
     ctx.moveTo(points[1].x, points[1].y);
@@ -261,7 +261,7 @@ export default function MovementCheck() {
       <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
         <div style={{ position: "relative", width: 480, maxWidth: "100%" }}>
           <video ref={videoRef} muted playsInline style={{ display: "none" }} />
-          <canvas ref={canvasRef} style={{ width: "100%", borderRadius: "var(--radius-md)", background: "#0d1a18" }} />
+          <canvas ref={canvasRef} style={{ width: "100%", borderRadius: "var(--radius-md)", background: "var(--bg-raised)" }} />
           {liveAngle != null && (
             <div style={{ position: "absolute", top: 10, left: 10, background: "rgba(23,38,37,0.75)", color: "#fff", padding: "0.3rem 0.6rem", borderRadius: "var(--radius-sm)", fontSize: "0.85rem" }}>
               live: {liveAngle.toFixed(0)}° &nbsp;|&nbsp; peak: {peakAngle?.toFixed(0)}°

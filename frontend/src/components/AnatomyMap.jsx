@@ -3,6 +3,12 @@ import { getExercisesForRegion, getRegions } from "../api";
 import BodySilhouette from "./BodySilhouette";
 import ExerciseList from "./ExerciseList";
 
+const VIEWS = [
+  { id: "front", label: "Front" },
+  { id: "back", label: "Back" },
+  { id: "side", label: "Side" },
+];
+
 export default function AnatomyMap() {
   const [regions, setRegions] = useState([]);
   const [view, setView] = useState("front");
@@ -32,22 +38,28 @@ export default function AnatomyMap() {
     <div>
       <h2 className="section-heading">Click where it hurts</h2>
       <p style={{ color: "var(--ink-soft)", marginBottom: "1rem" }}>
-        Switch between front and back, then click a highlighted point closest to the area.
+        Switch between front, back, and side, then click a highlighted muscle group closest to the area.
       </p>
       <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-        <div className="card" style={{ padding: "1.2rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.9rem", minWidth: 260 }}>
+        <div className="card" style={{ padding: "1.2rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.9rem", minWidth: 280 }}>
           <div style={{ display: "flex", gap: "0.4rem" }}>
-            <button className={`btn btn-secondary ${view === "front" ? "active" : ""}`} onClick={() => setView("front")}>
-              Front
-            </button>
-            <button className={`btn btn-secondary ${view === "back" ? "active" : ""}`} onClick={() => setView("back")}>
-              Back
-            </button>
+            {VIEWS.map((v) => (
+              <button
+                key={v.id}
+                className={`btn btn-secondary ${view === v.id ? "active" : ""}`}
+                onClick={() => setView(v.id)}
+              >
+                {v.label}
+              </button>
+            ))}
           </div>
-          <BodySilhouette view={view} regions={regions} activeRegion={activeRegion} onSelect={selectRegion} />
+          <BodySilhouette view={view} activeRegion={activeRegion} onSelect={selectRegion} />
+          <p style={{ fontSize: "0.78rem", color: "var(--ink-faint)", textAlign: "center" }}>
+            Hover to see a muscle name, click to see exercises for that group.
+          </p>
         </div>
         <div style={{ flex: 1, minWidth: 280 }}>
-          {!activeRegion && <p className="empty-state">Select a point on the diagram to see exercises for that area.</p>}
+          {!activeRegion && <p className="empty-state">Select a muscle group on the diagram to see exercises for that area.</p>}
           {activeRegion && (
             <>
               <h3 style={{ marginBottom: "0.75rem" }}>{activeLabel}</h3>

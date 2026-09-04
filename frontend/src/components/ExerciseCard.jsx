@@ -1,7 +1,12 @@
+import MoveDemo from "./MoveDemo";
+
 export default function ExerciseCard({ exercise }) {
   return (
-    <div className="card exercise-card">
-      <h3>{exercise.name}</h3>
+    <div className="card exercise-card" data-difficulty={exercise.difficulty}>
+      <div style={{ display: "flex", gap: "0.8rem", alignItems: "flex-start" }}>
+        {exercise.demo && <MoveDemo archetype={exercise.demo} />}
+        <h3 style={{ flex: 1 }}>{exercise.name}</h3>
+      </div>
       <div className="meta-row">
         <span className="chip">{exercise.equipment === "none" ? "No equipment" : exercise.equipment}</span>
         <span className="chip">{exercise.difficulty}</span>
