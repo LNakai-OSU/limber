@@ -1,0 +1,58 @@
+[
+  {
+    "id": "shoulder-flexion",
+    "name": "Overhead Shoulder Reach",
+    "instruction": "Stand sideways to the camera. Keeping your elbow straight, raise one arm forward and up overhead as far as comfortable, then hold for a second at the top.",
+    "joint": { "vertex": "shoulder", "a": "hip", "b": "wrist" },
+    "landmarks": { "hip": [23, 24], "shoulder": [11, 12], "wrist": [15, 16] },
+    "normal_range_deg": [150, 180],
+    "limited_below_deg": 140,
+    "regions": ["shoulders", "chest"],
+    "note": "Typical unrestricted active shoulder flexion is roughly 150-180 degrees."
+  },
+  {
+    "id": "trunk-flexion",
+    "name": "Standing Forward Bend",
+    "instruction": "Stand sideways to the camera, feet together. Slowly bend forward at the hips, reaching toward your toes as far as comfortable, knees soft.",
+    "joint": { "vertex": "hip", "a": "shoulder", "b": "knee" },
+    "landmarks": { "shoulder": [11, 12], "hip": [23, 24], "knee": [25, 26] },
+    "normal_range_deg": [70, 110],
+    "limited_below_deg": 60,
+    "regions": ["lower-back", "hamstrings"],
+    "note": "This tracks combined hip and low-back flexion, not spine curvature alone - a rough screening angle, not a clinical goniometer reading."
+  },
+  {
+    "id": "hip-flexion",
+    "name": "Standing Knee Raise",
+    "instruction": "Stand sideways to the camera, holding a wall or chair if needed. Lift one knee up toward your chest as high as comfortable.",
+    "joint": { "vertex": "hip", "a": "shoulder", "b": "knee" },
+    "landmarks": { "shoulder": [11, 12], "hip": [23, 24], "knee": [25, 26] },
+    "normal_range_deg": [90, 130],
+    "limited_below_deg": 80,
+    "regions": ["hips", "glutes"],
+    "note": "Typical active standing hip flexion (knee toward chest) is roughly 90-120+ degrees."
+  },
+  {
+    "id": "elbow-flexion",
+    "name": "Full Elbow Bend",
+    "instruction": "Stand sideways to the camera. Bend your elbow, bringing your hand toward your shoulder as far as comfortable.",
+    "joint": { "vertex": "elbow", "a": "shoulder", "b": "wrist" },
+    "landmarks": { "shoulder": [11, 12], "elbow": [13, 14], "wrist": [15, 16] },
+    "normal_range_deg": [0, 40],
+    "limited_below_deg": null,
+    "limited_above_deg": 60,
+    "regions": ["elbows", "forearms"],
+    "note": "This measures the remaining angle at full bend (smaller is more flexed) - typical full elbow flexion leaves roughly 0-40 degrees at the joint."
+  },
+  {
+    "id": "ankle-dorsiflexion",
+    "name": "Seated Toe Raise",
+    "instruction": "Sit sideways to the camera with your knee bent about 90 degrees, foot flat. Keeping your heel down, lift your toes and the front of your foot up as far as comfortable.",
+    "joint": { "vertex": "ankle", "a": "knee", "b": "foot_index" },
+    "landmarks": { "knee": [25, 26], "ankle": [27, 28], "foot_index": [31, 32] },
+    "normal_range_deg": [80, 100],
+    "limited_below_deg": 75,
+    "regions": ["ankles", "calves"],
+    "note": "Angle is measured between the shin and foot - closer to or above 90 degrees generally reflects good dorsiflexion range."
+  }
+]
