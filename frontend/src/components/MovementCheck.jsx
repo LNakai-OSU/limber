@@ -7,6 +7,10 @@ const WASM_URL = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.0.1/was
 const MODEL_URL =
   "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task";
 
+function getToken(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
 function angleAt(vertex, a, b) {
   const v1 = { x: a.x - vertex.x, y: a.y - vertex.y };
   const v2 = { x: b.x - vertex.x, y: b.y - vertex.y };
@@ -169,7 +173,7 @@ export default function MovementCheck() {
   }
 
   function drawSkeleton(ctx, lm, canvas) {
-    ctx.fillStyle = "#f2b134";
+    ctx.fillStyle = getToken("--md-sys-color-tertiary");
     for (const point of lm) {
       ctx.beginPath();
       ctx.arc(point.x * canvas.width, point.y * canvas.height, 3, 0, 2 * Math.PI);
@@ -178,7 +182,7 @@ export default function MovementCheck() {
   }
 
   function drawAngleMarkers(ctx, points) {
-    ctx.strokeStyle = "#e8703f";
+    ctx.strokeStyle = getToken("--md-sys-color-primary");
     ctx.lineWidth = 3;
     ctx.beginPath();
     ctx.moveTo(points[1].x, points[1].y);
@@ -200,22 +204,22 @@ export default function MovementCheck() {
 
   return (
     <div>
-      <h2 className="section-heading">Check your range of motion</h2>
-      <p style={{ color: "var(--ink-soft)", marginBottom: "1rem" }}>
+      <h2 className="section-heading md-headline-small">Check your range of motion</h2>
+      <p className="md-body-medium" style={{ color: "var(--md-sys-color-on-surface-variant)", marginBottom: "1rem" }}>
         Pose tracking runs entirely in your browser - your video is never uploaded or stored anywhere. This is a rough
         screening estimate, not a clinical measurement or diagnosis.
       </p>
 
-      <div className="card" style={{ padding: "1.1rem", marginBottom: "1rem", display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "flex-end" }}>
-        <div>
-          <label style={{ display: "block", fontSize: "0.82rem", color: "var(--ink-soft)", marginBottom: "0.3rem" }}>Movement test</label>
+      <div className="m3-card m3-card-filled" style={{ padding: "1.2rem", marginBottom: "1rem", display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "flex-end" }}>
+        <div className="m3-field" style={{ minWidth: 200 }}>
+          <label htmlFor="rom-test-select">Movement test</label>
           <select
+            id="rom-test-select"
             value={selectedTest?.id || ""}
             onChange={(e) => {
               setSelectedTest(tests.find((t) => t.id === e.target.value));
               resetTrial();
             }}
-            style={{ padding: "0.5rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)" }}
           >
             {tests.map((t) => (
               <option key={t.id} value={t.id}>
@@ -225,45 +229,56 @@ export default function MovementCheck() {
           </select>
         </div>
         <div>
-          <label style={{ display: "block", fontSize: "0.82rem", color: "var(--ink-soft)", marginBottom: "0.3rem" }}>Side</label>
-          <div style={{ display: "flex", gap: "0.4rem" }}>
-            <button className={`btn btn-secondary ${side === "left" ? "active" : ""}`} onClick={() => setSide("left")}>
-              Left
+          <label className="md-label-medium" style={{ display: "block", color: "var(--md-sys-color-on-surface-variant)", marginBottom: "6px" }}>Side</label>
+          <div className="m3-segmented">
+            <button className={`m3-segment ${side === "left" ? "is-selected" : ""}`} onClick={() => setSide("left")}>
+              {side === "left" ? "✓ " : ""}Left
             </button>
-            <button className={`btn btn-secondary ${side === "right" ? "active" : ""}`} onClick={() => setSide("right")}>
-              Right
+            <button className={`m3-segment ${side === "right" ? "is-selected" : ""}`} onClick={() => setSide("right")}>
+              {side === "right" ? "✓ " : ""}Right
             </button>
           </div>
         </div>
-        <button className="btn btn-primary" onClick={startWebcam} disabled={!modelReady}>
+        <button className="m3-button m3-button-filled md-label-large" onClick={startWebcam} disabled={!modelReady}>
           Use webcam
         </button>
-        <label className="btn btn-secondary" style={{ display: "inline-block" }}>
+        <label className="m3-button m3-button-outlined md-label-large" style={{ display: "inline-flex" }}>
           Upload a video
           <input type="file" accept="video/*" hidden onChange={(e) => e.target.files[0] && loadFile(e.target.files[0])} />
         </label>
         {running && (
-          <button className="btn btn-secondary" onClick={finishTrial}>
+          <button className="m3-button m3-button-tonal md-label-large" onClick={finishTrial}>
             Capture peak &amp; assess
           </button>
         )}
       </div>
 
       {selectedTest && (
-        <p className="chip" style={{ marginBottom: "1rem", display: "inline-flex" }}>
+        <p className="m3-chip md-label-large" style={{ marginBottom: "1rem", display: "inline-flex", height: "auto", padding: "10px 16px" }}>
           {selectedTest.instruction}
         </p>
       )}
 
-      {!modelReady && !error && <p className="empty-state">Loading pose model...</p>}
-      {error && <p className="caution" style={{ display: "inline-block", marginBottom: "1rem" }}>{error}</p>}
+      {!modelReady && !error && <p className="empty-state md-body-medium">Loading pose model...</p>}
+      {error && <p className="caution md-body-small" style={{ display: "inline-block", marginBottom: "1rem" }}>{error}</p>}
 
       <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
         <div style={{ position: "relative", width: 480, maxWidth: "100%" }}>
           <video ref={videoRef} muted playsInline style={{ display: "none" }} />
-          <canvas ref={canvasRef} style={{ width: "100%", borderRadius: "var(--radius-md)", background: "var(--bg-raised)" }} />
+          <canvas ref={canvasRef} style={{ width: "100%", borderRadius: "var(--md-sys-shape-corner-medium)", background: "var(--md-sys-color-surface-container-high)" }} />
           {liveAngle != null && (
-            <div style={{ position: "absolute", top: 10, left: 10, background: "rgba(23,38,37,0.75)", color: "#fff", padding: "0.3rem 0.6rem", borderRadius: "var(--radius-sm)", fontSize: "0.85rem" }}>
+            <div
+              className="md-label-large"
+              style={{
+                position: "absolute",
+                top: 10,
+                left: 10,
+                background: "var(--md-sys-color-inverse-surface)",
+                color: "var(--md-sys-color-inverse-on-surface)",
+                padding: "6px 12px",
+                borderRadius: "var(--md-sys-shape-corner-small)",
+              }}
+            >
               live: {liveAngle.toFixed(0)}° &nbsp;|&nbsp; peak: {peakAngle?.toFixed(0)}°
             </div>
           )}
@@ -271,12 +286,12 @@ export default function MovementCheck() {
         <div style={{ flex: 1, minWidth: 280 }}>
           {assessment ? (
             <>
-              <h3 style={{ marginBottom: "0.5rem" }}>{assessment.headline}</h3>
-              <p style={{ color: "var(--ink-soft)", marginBottom: "1rem" }}>{assessment.suggestion}</p>
+              <h3 className="md-title-large" style={{ marginBottom: "0.5rem" }}>{assessment.headline}</h3>
+              <p className="md-body-medium" style={{ color: "var(--md-sys-color-on-surface-variant)", marginBottom: "1rem" }}>{assessment.suggestion}</p>
               <ExerciseList exercises={assessment.exercises} />
             </>
           ) : (
-            <p className="empty-state">
+            <p className="empty-state md-body-medium">
               Follow the instruction above, then click "Capture peak &amp; assess" at the top of the movement.
             </p>
           )}

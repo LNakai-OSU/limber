@@ -1,8 +1,8 @@
 import { REAL_MUSCLES, REAL_MUSCLE_TRANSFORM } from "../data/realMuscles";
 import { JOINT_MARKERS } from "../data/jointMarkers";
 
-const SKIN = "#e9dcc0";
-const SKIN_LINE = "#cbb98f";
+const SKIN = "var(--md-sys-color-surface-container-highest)";
+const SKIN_LINE = "var(--md-sys-color-outline-variant)";
 
 function Outline() {
   return (
@@ -26,6 +26,11 @@ function Outline() {
   );
 }
 
+// Real wger.de illustrations render in primary (the app's main color, since
+// they're the hero content); plain joint markers render in tertiary, so the
+// two content types (real art vs. honest placeholder) read as distinct roles
+// by hue. Selection is signaled by intensity (opacity/stroke), not a third
+// hue, so "which one is picked" stays legible without adding another color.
 function RealMuscle({ muscle, view, isActive, onSelect }) {
   return (
     <g
@@ -38,11 +43,11 @@ function RealMuscle({ muscle, view, isActive, onSelect }) {
         <path
           key={i}
           d={d}
-          fill={isActive ? "var(--clay-bright)" : "var(--clay)"}
-          fillOpacity={isActive ? 0.92 : 0.62}
-          stroke={isActive ? "var(--clay-bright)" : "var(--clay)"}
-          strokeOpacity={0.85}
-          strokeWidth={isActive ? 3 : 1.5}
+          fill="var(--md-sys-color-primary)"
+          fillOpacity={isActive ? 0.95 : 0.7}
+          stroke="var(--md-sys-color-primary)"
+          strokeOpacity={isActive ? 1 : 0.5}
+          strokeWidth={isActive ? 3 : 1}
           vectorEffect="non-scaling-stroke"
         />
       ))}
@@ -58,10 +63,10 @@ function Marker({ m, isActive, onSelect }) {
         cx={m.cx}
         cy={m.cy}
         r={m.r}
-        fill={isActive ? "var(--clay-bright)" : "var(--primary)"}
-        fillOpacity={isActive ? 0.95 : 0.55}
-        stroke={isActive ? "var(--clay-bright)" : "var(--primary)"}
-        strokeWidth="1.5"
+        fill="var(--md-sys-color-tertiary)"
+        fillOpacity={isActive ? 0.98 : 0.75}
+        stroke="var(--md-sys-color-surface)"
+        strokeWidth={isActive ? 2.5 : 1.5}
         vectorEffect="non-scaling-stroke"
       />
       <title>{m.label}</title>

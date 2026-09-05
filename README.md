@@ -8,6 +8,24 @@ your range of motion from a short video.
 **This is a portfolio/learning project, not a medical product.** See
 [Disclaimer](#disclaimer) below.
 
+## Design system: Material 3
+
+The UI is built on an actual Material 3 (Material You) foundation, not a
+one-off palette. The color roles - primary/secondary/tertiary, their
+containers, the surface-container tonal steps, outline, error - are generated
+algorithmically from a single seed color (`#1B8A5A`) using Google's own
+[`@material/material-color-utilities`](https://github.com/material-foundation/material-color-utilities)
+HCT tonal-spot algorithm, the same math behind Material You on Android, then
+baked into CSS custom properties (`frontend/src/index.css`). Typography
+follows the M3 type scale (display/headline/title/body/label, each at its
+spec'd size and weight), components follow M3 patterns (filled/outlined/text/
+tonal buttons, outlined text fields, assist chips, segmented buttons, primary
+tabs, elevated/filled cards with real M3 elevation shadows and state layers),
+and the app's own color-coding reuses the system's roles on purpose: real
+wger.de muscle illustrations render in `primary`, plain joint markers in
+`tertiary`, so "real art" vs. "honest placeholder" is legible by role, not
+just by size.
+
 ## The three input modes
 
 **Describe it.** Type something like "my lower back is stiff after sitting at
@@ -86,9 +104,11 @@ local stretch, stop and consider seeing a clinician").
 ## Tech stack
 
 - **Backend:** FastAPI, sentence-transformers, NumPy
-- **Frontend:** React + Vite, `@mediapipe/tasks-vision` (client-side pose
-  estimation), `three.js` (3D movement viewer), real anatomical SVGs from
-  wger.de layered with hand-placed joint markers
+- **Frontend:** React + Vite, Material 3 design tokens (generated at build
+  time via `@material/material-color-utilities`, not a runtime dependency),
+  `@mediapipe/tasks-vision` (client-side pose estimation), `three.js` (3D
+  movement viewer), real anatomical SVGs from wger.de layered with
+  hand-placed joint markers
 - No database - the exercise/region/ROM-test data is static, hand-authored
   JSON loaded at startup
 

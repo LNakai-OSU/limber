@@ -32,8 +32,8 @@ const ARCHETYPES = {
   "roll-pulse": [{ joint: "wristR", axis: "x", from: -8, to: 8 }],
 };
 
-const BONE_COLOR = 0x3f5d43;
-const JOINT_COLOR = 0xc1623c;
+const BONE_COLOR = 0x276a49; // --md-sys-color-primary
+const JOINT_COLOR = 0x3c6471; // --md-sys-color-tertiary
 
 // dir: +1 grows the bone upward (+Y) from its joint, -1 grows it downward.
 // Every chain below (spine going up; arms/legs going down) needs this to
@@ -130,14 +130,14 @@ export default function Movement3DViewer({ archetype, onClose }) {
     controls.maxDistance = 4;
     controls.update();
 
-    scene.add(new THREE.HemisphereLight(0xfff3e0, 0x3f5d43, 1.1));
+    scene.add(new THREE.HemisphereLight(0xf6fbf4, 0x276a49, 1.1));
     const dir = new THREE.DirectionalLight(0xffffff, 1.1);
     dir.position.set(2, 3, 2);
     scene.add(dir);
 
     const ground = new THREE.Mesh(
       new THREE.CircleGeometry(1.1, 40),
-      new THREE.MeshStandardMaterial({ color: 0xe3d3ae, roughness: 1 })
+      new THREE.MeshStandardMaterial({ color: 0xdce5dc, roughness: 1 })
     );
     ground.rotation.x = -Math.PI / 2;
     scene.add(ground);
@@ -196,7 +196,7 @@ export default function Movement3DViewer({ archetype, onClose }) {
       style={{
         position: "fixed",
         inset: 0,
-        background: "rgba(51,43,31,0.55)",
+        background: "color-mix(in srgb, var(--md-sys-color-scrim) 32%, transparent)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -205,17 +205,23 @@ export default function Movement3DViewer({ archetype, onClose }) {
       onClick={onClose}
     >
       <div
-        className="card"
-        style={{ padding: "1.2rem", width: "min(420px, 90vw)" }}
+        className="m3-card"
+        style={{
+          padding: "1.4rem",
+          width: "min(420px, 90vw)",
+          background: "var(--md-sys-color-surface-container-high)",
+          borderRadius: "var(--md-sys-shape-corner-extra-large)",
+          boxShadow: "var(--md-sys-elevation-3)",
+        }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.6rem" }}>
-          <span style={{ fontSize: "0.85rem", color: "var(--ink-soft)" }}>Drag to rotate, scroll to zoom</span>
-          <button className="btn btn-secondary" onClick={onClose} style={{ padding: "0.35rem 0.8rem" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.8rem" }}>
+          <span className="md-body-medium" style={{ color: "var(--md-sys-color-on-surface-variant)" }}>Drag to rotate, scroll to zoom</span>
+          <button className="m3-button m3-button-text md-label-large" onClick={onClose} style={{ padding: "0 12px", height: 32 }}>
             Close
           </button>
         </div>
-        <div ref={containerRef} style={{ width: "100%", height: 320, borderRadius: "var(--radius-sm)", overflow: "hidden", background: "var(--surface-2)" }} />
+        <div ref={containerRef} style={{ width: "100%", height: 320, borderRadius: "var(--md-sys-shape-corner-medium)", overflow: "hidden", background: "var(--md-sys-color-surface-container-highest)" }} />
       </div>
     </div>
   );
