@@ -100,6 +100,20 @@ are © [wger Workout Manager](https://wger.de) contributors, licensed
 else - the outline, joint markers, exercise content, 3D rig, and code - is
 original to this project.
 
+## Screenshots
+
+![Landing page - describe what's bothering you](screenshots/01-describe.png)
+
+![Describe-it text search, ranked by real semantic similarity](screenshots/02-describe-results.png)
+
+![The on-demand 3D joint-rig viewer, rotatable and zoomable](screenshots/03-3d-viewer.png)
+
+![Anatomy map front view with real wger.de muscle illustrations](screenshots/04-anatomy-front.png)
+
+![Anatomy map back view](screenshots/05-anatomy-back.png)
+
+![Movement check tab, ready to screen range of motion from a webcam or video](screenshots/06-movement-check.png)
+
 ## Running it locally
 
 ```bash
